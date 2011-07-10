@@ -13,7 +13,13 @@ Gem::Specification.new do |s|
 
   s.add_dependency "gdata"
   s.add_dependency "sinatra", "= 1.1.3"
+
+  # development only:
+  s.add_dependency "fakeweb"
+  s.add_dependency "nokogiri"
   s.add_dependency "rake", "= 0.8.7"
+  s.add_dependency "rspec"
+  s.add_dependency "vcr"
 
   s.rubyforge_project = "gwt"
 

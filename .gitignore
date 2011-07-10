@@ -4,6 +4,6 @@
 *~
 .DS_Store
 credentials.yml
-feed.xml
+fixtures/cassettes
 pkg
-vendor/ruby
+vendor
