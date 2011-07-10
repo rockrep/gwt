@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["John Manoogian III"]
   s.email       = ["jm3@jm3.net"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{the Google Webmaster Toolkit gem}
+  s.description = %q{the Google Webmaster Toolkit gem, by @jm3}
 
   s.rubyforge_project = "gwt"
 
@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "gdata"
+  s.add_dependency "rake"
 end
