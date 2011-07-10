@@ -7,11 +7,18 @@ require 'gwt/toolkit'
 # http server when this script is executed
 set :run, true
 
+before do
+  @toolkit = GWT::Toolkit.new
+end
+
 get '/' do
-  toolkit = GWT::Toolkit.new
-  toolkit.awaken
+  @toolkit.awaken
 end
 
 get '/login' do
-  GWT::Toolkit.login
+  @toolkit.login
+end
+
+get '/site' do
+  @toolkit.sites
 end
