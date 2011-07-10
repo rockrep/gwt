@@ -19,6 +19,6 @@ get '/login' do
   @toolkit.login
 end
 
-get '/site' do
+get '/sites' do
   @toolkit.sites
 end
