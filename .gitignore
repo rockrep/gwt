@@ -1,0 +1,9 @@
+*.bak
+*.diff
+*.psd
+*.swp
+credentials.yml
+*~
+.DS_Store
+log
+vendor/ruby
