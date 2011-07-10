@@ -7,17 +7,18 @@ Gem::Specification.new do |s|
   s.version     = Gwt::VERSION
   s.authors     = ["John Manoogian III"]
   s.email       = ["jm3@jm3.net"]
-  s.homepage    = ""
+  s.homepage    = "http://www.jm3.net/"
   s.summary     = %q{the Google Webmaster Toolkit gem}
   s.description = %q{the Google Webmaster Toolkit gem, by @jm3}
+
+  s.add_dependency "gdata"
+  s.add_dependency "sinatra", "= 1.1.3"
+  s.add_dependency "rake", "= 0.8.7"
 
   s.rubyforge_project = "gwt"
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  #s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-
-  s.add_dependency "gdata"
-  s.add_dependency "rake"
 end
