@@ -1,7 +1,4 @@
 source "http://rubygems.org"
 
-gem "gdata"
-group :development do
-  gem "shoulda"
-  gem "jeweler"
-end
+# Specify your gem's dependencies in gwt.gemspec
+gemspec

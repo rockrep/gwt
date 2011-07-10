@@ -1,15 +1,5 @@
-module GWT
+require "gwt/version"
 
-  require 'gwt/authentication_request'
-
-    def self.do
-
-      @credentials = YAML.load_file( "credentials.yml" )
-
-      client = GData::Client::WebmasterTools.new
-      client.clientlogin( @credentials["user"], @credentials["password"] )
-
-    end
-  end
+module Gwt
+  # Your code goes here...
 end
-
