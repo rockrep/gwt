@@ -8,6 +8,10 @@ require 'gwt/toolkit'
 set :run, true
 
 get '/' do
-  time_keeper = GWT::Toolkit.new
-  return toolkit.awaken
+  toolkit = GWT::Toolkit.new
+  toolkit.awaken
+end
+
+get '/login' do
+  GWT::Toolkit.login
 end

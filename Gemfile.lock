@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gwt (0.0.1)
+    gwt (0.0.2)
       gdata
       rake (= 0.8.7)
       sinatra (= 1.1.3)
