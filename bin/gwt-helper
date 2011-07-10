@@ -20,5 +20,6 @@ get '/login' do
 end
 
 get '/sites' do
-  @toolkit.sites
+  puts @toolkit.sites
+  "got some sites"
 end

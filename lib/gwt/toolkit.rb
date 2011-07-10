@@ -1,7 +1,7 @@
 module GWT
   class Toolkit
 
-  require 'gdata'
+  require "gdata"
 
     def awaken
       puts "i'm up!"
@@ -25,16 +25,16 @@ module GWT
 
       feed = client.get( sites_feed ).to_xml
 
-      feed.elements.each('entry') do |entry|
-        puts 'title: ' + entry.elements['title'].text
-        puts 'type: ' + entry.elements['category'].attribute('label').value
-        puts 'updated: ' + entry.elements['updated'].text
-        puts 'id: ' + entry.elements['id'].text
+      feed.elements.each("entry") do |entry|
+        puts "title:        " + entry.elements["title"].text
+        puts "site:         " + CGI::unescape( entry.elements["id"].text.gsub( /#{sites_feed}/, ""))
+        puts "verified:     " + entry.elements["wt:verified"].text
+        puts "verified via: " + entry.elements["wt:verification-method"].text
         
         # Extract the href value from each <atom:link>
         links = {}
-        entry.elements.each('link') do |link|
-          links[link.attribute('rel').value] = link.attribute('href').value
+        entry.elements.each("link") do |link|
+          links[link.attribute("rel").value] = link.attribute("href").value
         end
         puts links.to_s
       end
