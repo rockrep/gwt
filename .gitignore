@@ -1,9 +1,8 @@
 *.bak
 *.diff
-*.psd
 *.swp
-credentials.yml
 *~
 .DS_Store
-log
+credentials.yml
+pkg
 vendor/ruby
