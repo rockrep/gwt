@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "gwt.gemspec",
     "gwt.rb",
     "lib/gwt.rb",
     "test/helper.rb",
