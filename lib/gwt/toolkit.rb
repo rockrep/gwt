@@ -8,20 +8,22 @@ module GWT
     end
 
     def login
-      @credentials = YAML.load_file( "credentials.yml" )
+      credentials = YAML.load_file( "credentials.yml" )
       client = GData::Client::WebmasterTools.new
-      client.clientlogin( @credentials["user"], @credentials["password"] )
+      client.clientlogin( credentials["user"], credentials["password"] )
       client
     end
 
     def sites
-      # FIXME go Class-level, set this stuff up once per instance, etc.
-      @credentials = YAML.load_file( "credentials.yml" )
-      client = GData::Client::WebmasterTools.new
-      client.clientlogin( @credentials["user"], @credentials["password"] )
 
-      SITES_FEED = "https://www.google.com/webmasters/tools/feeds/sites/"
-      feed = client.get( SITES_FEED ).to_xml
+      sites_feed = "https://www.google.com/webmasters/tools/feeds/sites/"
+
+      # FIXME go Class-level, set this stuff up once per instance, etc.
+      credentials = YAML.load_file( "credentials.yml" )
+      client = GData::Client::WebmasterTools.new
+      client.clientlogin( credentials["user"], credentials["password"] )
+
+      feed = client.get( sites_feed ).to_xml
 
       feed.elements.each('entry') do |entry|
         puts 'title: ' + entry.elements['title'].text
