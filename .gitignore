@@ -4,5 +4,6 @@
 *~
 .DS_Store
 credentials.yml
+feed.xml
 pkg
 vendor/ruby
