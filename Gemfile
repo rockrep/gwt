@@ -2,4 +2,6 @@ source "http://rubygems.org"
 
 gem "gdata"
 gem "gmoney"
-gem "jeweler"
+group :development do
+  gem "jeweler"
+end
