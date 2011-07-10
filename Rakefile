@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "gwt"
   gem.homepage = "http://github.com/jm3/gwt"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{the Google Webmaster Toolkit gem}
+  gem.description = %Q{the Google Webmaster Toolkit gem}
   gem.email = "jm3@jm3.net"
   gem.authors = ["John Manoogian III"]
   # dependencies defined in Gemfile
