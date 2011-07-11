@@ -19,4 +19,3 @@ To get started:
 
 Copyright (c) 2011 John Manoogian III.
 See LICENSE.txt for further details.
-
