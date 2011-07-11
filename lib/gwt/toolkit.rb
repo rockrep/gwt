@@ -27,16 +27,8 @@ module GWT
 
       feed.elements.each("entry") do |entry|
         puts "title:        " + entry.elements["title"].text
-        # puts "resource id:  " + entry.elements["id"].text
         puts "verified:     " + entry.elements["wt:verified"].text
         puts "verified via: " + entry.elements["wt:verification-method"].text
-        
-        # # Extract the href value from each <atom:link>
-        # links = {}
-        # entry.elements.each("link") do |link|
-        #   links[link.attribute("rel").value] = link.attribute("href").value
-        # end
-        # puts links.to_s
       end
 
     end
