@@ -35,6 +35,12 @@ class GwtUser
     get_feed( "#{GWT_API}/sites/" )
   end
 
+  def add_site
+    #<atom:entry xmlns:atom='http://www.w3.org/2005/Atom'>
+    #<atom:content src="http://www.example.com/" />
+    #</atom:entry>
+  end
+
   private
 
   def get_feed( uri )
