@@ -8,7 +8,7 @@ module GWT
     end
 
     def login
-      credentials = YAML.load_file( "credentials.yml" )
+      credentials = YAML.load_file( "credentials.yml" )["account_with_sites"]
       client = GData::Client::WebmasterTools.new
       client.clientlogin( credentials["user"], credentials["password"] )
       client
@@ -19,7 +19,7 @@ module GWT
       sites_feed = "https://www.google.com/webmasters/tools/feeds/sites/"
 
       # FIXME go Class-level, set this stuff up once per instance, etc.
-      credentials = YAML.load_file( "credentials.yml" )
+      credentials = YAML.load_file( "credentials.yml" )["account_with_sites"]
       client = GData::Client::WebmasterTools.new
       client.clientlogin( credentials["user"], credentials["password"] )
 

@@ -21,7 +21,7 @@ TEST_SITE = "http%3A%2F%2F140proof.com%2F"
 describe "toolkit" do
 
   def creds
-    YAML.load_file( "credentials.yml" )
+    YAML.load_file( "credentials.yml" )["new_account"]
   end
 
   def get_gwt_feed( uri )
