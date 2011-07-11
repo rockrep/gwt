@@ -1,6 +1,9 @@
 = gwt
 
-Description goes here.
+Google Webmaster Tools… IN A GEM.
+
+To get started:
+* `mv credentials.yml.sample credentials.yml`
 
 == Contributing to gwt
  

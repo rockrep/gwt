@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   # development only:
   s.add_dependency "fakeweb"
   s.add_dependency "nokogiri"
-  s.add_dependency "rake", "= 0.8.7"
+  s.add_dependency "rake", "= 0.9.2"
   s.add_dependency "rspec"
   s.add_dependency "vcr"
 
