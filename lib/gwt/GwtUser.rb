@@ -6,7 +6,6 @@ class GwtUser
 
   GWT_API     = "https://www.google.com/webmasters/tools/feeds"
   XML_NS      = "http://schemas.google.com/webmasters/tools/2007"
-  TEST_SITE   = "http%3A%2F%2F140proof.com%2F"
 
   def initialize( kind = "new_account" )
     @kind = kind
