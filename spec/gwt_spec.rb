@@ -96,12 +96,7 @@ describe "GWT" do
     end
 
     it "should succeed" do
-      @post_data = <<-XML
-      <atom:entry xmlns:atom='http://www.w3.org/2005/Atom'>
-        <atom:content src="#{@site}" />
-      </atom:entry>
-      XML
-      @response = @u.add_site( @post_data )
+      @response = @u.add_site( @site )
       @response.status_code.should == 201
     end
 

@@ -7,7 +7,7 @@ class GwtUser
   GWT_API     = "https://www.google.com/webmasters/tools/feeds"
   XML_NS      = "http://schemas.google.com/webmasters/tools/2007"
 
-  def initialize( kind = "new_account" )
+  def initialize( kind = "new_account" ) # FIXME change this default
     @kind = kind
     @credentials = YAML.load_file( "credentials.yml" )[ kind ]
     @client = GData::Client::WebmasterTools.new
@@ -40,8 +40,15 @@ class GwtUser
     #</atom:entry>
   end
 
-  def add_site( data )
-    @client.post( "#{GWT_API}/sites/", data )
+  def add_site( site )
+    raise "no site!" unless site
+
+    post_data = <<-XML
+    <atom:entry xmlns:atom='http://www.w3.org/2005/Atom'>
+      <atom:content src="#{site}" />
+    </atom:entry>
+    XML
+    @client.post( "#{GWT_API}/sites/", post_data )
   end
 
   def delete_site( site )
