@@ -43,10 +43,16 @@ class GwtUser
   def add_site( data )
     @client.post( "#{GWT_API}/sites/", data )
   end
-  
+
   def delete_site( site )
     raise "no site given" unless site
     @client.delete( "#{GWT_API}/sites/#{CGI.escape(site)}" )
+  end
+
+  def verify_site( site, data )
+    raise "no site given" unless site
+    raise "no data given" unless data
+    @client.put( "#{GWT_API}/sites/#{CGI.escape(site)}", data )
   end
 
   private

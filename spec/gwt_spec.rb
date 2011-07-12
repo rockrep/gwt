@@ -109,6 +109,34 @@ describe "GWT" do
       @u.sites.css( "entry title" ).text.should == @site
     end
   end
+  
+  context "verify a site" do
+    use_vcr_cassette
+
+    before(:each) do
+      @u = GwtUser.new( "new_account" )
+      @site = "http://onebuttondeploy.com/"
+    end
+
+    it "should succeed" do
+      @verify_xml = <<-XML
+      <atom:entry xmlns:atom="http://www.w3.org/2005/Atom"
+          xmlns:wt="http://schemas.google.com/webmasters/tools/2007">
+        <atom:id>#{@site}/sitemap.xml</atom:id>
+        <atom:category scheme='http://schemas.google.com/g/2005#kind'
+          term='http://schemas.google.com/webmasters/tools/2007#site-info'/>
+        <wt:verification-method type="htmlpage" in-use="true"/>
+      </atom:entry>
+      XML
+      # (or type = metatag)
+      response = @u.verify_site( @site, @verify_xml )
+      response.status_code.should == 200
+    end
+
+    it "sites feed should show that the site is verified" do
+      @u.sites.xpath( "//wt:verified", "wt" => GwtUser::XML_NS).text.should == "true"
+    end
+  end
 
   context "delete a site" do
     use_vcr_cassette
