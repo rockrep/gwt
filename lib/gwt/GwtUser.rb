@@ -40,6 +40,15 @@ class GwtUser
     #</atom:entry>
   end
 
+  def add_site( data )
+    @client.post( "#{GWT_API}/sites/", data )
+  end
+  
+  def delete_site( site )
+    raise "no site given" unless site
+    @client.delete( "#{GWT_API}/sites/#{CGI.escape(site)}" )
+  end
+
   private
 
   def get_feed( uri )
