@@ -2,6 +2,10 @@
 
 Google Webmaster Tools… IN A GEM.
 
+* add new sites to your account
+* verify sites to prove that you own them
+* remove sites
+
 To get started:
 * `mv credentials.yml.sample credentials.yml`
 
