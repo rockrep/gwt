@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gwt (0.0.4)
+    gwt (0.0.5)
       fakeweb
       gdata
       nokogiri
