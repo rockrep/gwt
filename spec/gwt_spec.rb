@@ -108,6 +108,22 @@ describe "GWT" do
     it "sites feed should contain the new site" do
       @u.sites.css( "entry title" ).text.should == @site
     end
+  end
+   
+  context "delete a site" do
+    use_vcr_cassette
 
+    before(:each) do
+      @u = GwtUser.new( "new_account" )
+      @site = "http://onebuttondeploy.com/"
+    end
+
+    it "should be deleted" do
+      response = @u.delete_site( @site )
+      response.status_code.should == 200
+    end
+    it "sites feed should no longer contain the new site" do
+      @u.sites.css( "entry" ).size.should == 0
+    end
   end
 end
