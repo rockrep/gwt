@@ -72,10 +72,10 @@ describe "GWT" do
       @u.messages.css( "title" ).text.should == "Messages"
     end
 
-    it "messages feed should contain messages" do
-      pending "how do i make messages appear in my account?"
-      @u.messages.css( "entry" ).size.should be > 0
-    end
+    # it "messages feed should contain messages" do
+    #   pending "how do i make messages appear in my account?"
+    #   @u.messages.css( "entry" ).size.should be > 0
+    # end
 
     it "sitemaps feed should contain the parent site" do
       @u.sitemaps.css( "title" ).text.should == CGI.unescape( TEST_SITE )
